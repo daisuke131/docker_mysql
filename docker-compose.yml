@@ -1,7 +1,7 @@
 version: '3.9'
 
 services:
-  database:
+  db:
     restart: always
     image: mysql:latest
     # container_name: mysql-container # コンテナ名を指定するとき
@@ -10,10 +10,9 @@ services:
       - 3306:3306
     command: --default-authentication-plugin=mysql_native_password
     volumes:
-      - dbdata:/var/lib/mysql
+      - db:/var/lib/mysql
     environment:
       # MYSQL_ROOT_PASSWORD: root # パスワードを指定するとき
       MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
 volumes:
-  dbdata:
-    # driver: local
+  db:
