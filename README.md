@@ -2,8 +2,16 @@
 
 ## docker起動
 
+Makefileを作成しているので下記コマンドで起動できる。
+
 ```
-$ docker-compose up -d
+$ make up
+```
+
+↓で止める。
+
+```
+$ make down
 ```
 
 ## rails設定
@@ -50,18 +58,4 @@ $ bundle exec rails s -b 0.0.0.0
 ```
 vendor/bundle
 vendor/bin
-```
-
-Makefile作成
-
-```
-.PHONY: up
-up:
-	docker-compose up -d
-```
-
-次回から↓で起動できる。
-
-```
-$ make up
 ```
