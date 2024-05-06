@@ -20,12 +20,15 @@ rails new
 gemfileのみ書き換える(y)
 
 ```
-$ bundle exec rails new . -d mysql --skip-bundle --skip-test
+$ bundle exec rails new . -d mysql --api --skip-bundle --skip-test
 ```
 
 bundle install
 
 ```
+# 1回目
+$ bundle install --path=vendor/bundle --jobs=4
+# 2回目以降
 $ bundle install --local --path=vendor/bundle --binstubs=vendor/bin --jobs=4
 ```
 
